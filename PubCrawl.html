@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pub Crawl Route - Aarhus</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #2c5530;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: #2c5530;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+            margin: 10px 0;
+        }
+        
+        .route-container {
+            margin: 30px 0;
+        }
+        
+        .stop {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 5px solid #2c5530;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .stop::before {
+            content: attr(data-number);
+            position: absolute;
+            left: -15px;
+            top: 15px;
+            background: #2c5530;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .stop h3 {
+            color: #2c5530;
+            margin: 0 0 10px 0;
+            font-size: 1.4em;
+        }
+        
+        .location {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .drink {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #856404;
+        }
+        
+        .forfeit {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            color: #721c24;
+            font-weight: bold;
+        }
+        
+        .forfeit-title {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: #721c24;
+        }
+        
+        .rules-section {
+            margin-top: 40px;
+            background: #f1f3f4;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #2c5530;
+        }
+        
+        .rules-section h2 {
+            color: #2c5530;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .rule {
+            background: white;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2c5530;
+        }
+        
+        .rule-name {
+            font-weight: bold;
+            color: #2c5530;
+            font-size: 1.1em;
+        }
+        
+        .rule-description {
+            margin-top: 5px;
+            color: #555;
+        }
+        
+        .teams-section {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .team {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #2c5530;
+            text-align: center;
+        }
+        
+        .team h3 {
+            color: #2c5530;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .team-member {
+            background: #f8f9fa;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border-left: 3px solid #2c5530;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #2c5530;
+            color: #666;
+        }
+        
+        @media print {
+            body {
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🍻 PUB CRAWL AARHUS 🍻</h1>
+        <p>BORGs Pub Crawl anno 2025</p>
+        <p><strong></strong></p>
+    </div>
+    
+    <div class="route-container">
+        <div class="stop" data-number="1">
+            <h3>Cafe Vestergade</h3>
+            <div class="location">📍 Cafe Vestergade 42</div>
+            <div class="drink">🍺 2x Ceres Top</div>
+            <p><em>Velkomst, vi nyder de to første øl i det gode vejr!</em></p>
+            <div class="forfeit">
+                <div class="forfeit-title">⚡ Straf:</div>
+                Ingen Straf ved dette stop
+            </div>
+        </div>
+        
+        <div class="stop" data-number="2">
+            <h3>Cafe Oops</h3>
+            <div class="location">📍 Cafe Oops</div>
+            <div class="drink">🍺 En kande Øl/Cider per Hold</div>
+            <p><em>Der skal siges skål, inden hver tår tages</em></p>
+            <div class="forfeit">
+                <div class="forfeit-title">⚡ Straf:</div>
+                Resten af øllen skal drikkes gennem sugerør
+            </div>
+        </div>
+        
+        <div class="stop" data-number="3">
+            <h3>Madpause</h3>
+            <div class="location">📍 Ali Baba Rulle / Hos Bilal</div>
+            <div class="drink">🥙 Mad til maven</div>
+            <p><em>Vi nyder vores mad og smutter hurtigt videre</em></p>
+            <div class="forfeit">
+                <div class="forfeit-title">⚡ Straf:</div>
+                Ingen Straf her
+            </div>
+        </div>
+        
+        <div class="stop" data-number="4">
+            <h3>Hos Anders</h3>
+            <div class="location">📍 Hos Anders</div>
+            <div class="drink">🍺 Aarhus Sæt</div>
+            <p><em>Ingen navne må nævnes ved dette stop</em></p>
+            <div class="forfeit">
+                <div class="forfeit-title">⚡ Straf:</div>
+                Holdkammerat skal føre din drink på næste stop
+            </div>
+        </div>
+        
+        <div class="stop" data-number="5">
+            <h3>Pustervig</h3>
+            <div class="location">📍 Pustervig</div>
+            <div class="drink">🍹 Surprise Cocktail</div>
+            <p><em>Lykkehjulet</em></p>
+            <div class="forfeit">
+                <div class="forfeit-title">⚡ Straf ved at nægte lykkehjulet:</div>
+                Skal drikke den værste cocktail på menukortet
+            </div>
+        </div>
+        
+        <div class="stop" data-number="6">
+            <h3>Lecoq</h3>
+            <div class="location">📍 Lecoq</div>
+            <div class="drink">🥃 Chartreuse</div>
+            <p><em>Skal bundes, ingen må skære ansigt</em></p>
+            <div class="forfeit">
+                <div class="forfeit-title">⚡ Straf ved at skære ansigt:</div>
+                Der gives en runde shots til alle
+            </div>
+        </div>
+        
+        <div class="stop" data-number="7">
+            <h3>Herr Bartels</h3>
+            <div class="location">📍 Herr Bartels</div>
+            <div class="drink">🍹 Long Island</div>
+            <p><em>Finalen!</em></p>
+            <div class="forfeit">
+                <div class="forfeit-title">⚡ Straf ved ikke at fuldføre:</div>
+                Skal betale for alle andres drinks
+            </div>
+        </div>
+    </div>
+    
+    <div class="rules-section">
+        <h2>🎯 Lykkehjulet Muligheder</h2>
+        
+        <div class="rule">
+            <div class="rule-name">Klassiker</div>
+            <div class="rule-description">Holdet skal bestille en signatur klassisk cocktail</div>
+        </div>
+        
+        <div class="rule">
+            <div class="rule-name">Tvangs Cocktail</div>
+            <div class="rule-description">Et andet hold vælger den cocktail som de skal bestille</div>
+        </div>
+        
+        <div class="rule">
+            <div class="rule-name">Drink Roulette</div>
+            <div class="rule-description">Der vælges et nummer fra 1-15, nummeret = Cocktail på menukortet</div>
+        </div>
+        
+        <div class="teams-section">
+            <div class="team">
+                <h3>Hold 1</h3>
+                <div class="team-member">Nicolai</div>
+		<div class="team-member">Andreas</div>
+                <div class="team-member">Anders</div>
+            </div>
+            
+            <div class="team">
+                <h3>Hold 2</h3>
+                <div class="team-member">Magnus</div>
+                <div class="team-member">Julie</div>
+                <div class="team-member">Signe</div>
+                <div class="team-member">Matthias</div>
+            </div>
+            
+            <div class="team">
+                <h3>Hold 3</h3>
+                <div class="team-member">Oliver</div>
+                <div class="team-member">Thomas</div>
+                <div class="team-member">Anne Louise</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p><strong>Husk:</strong> Drik ansvarligt og pas på hinanden! 🍻</p>
+        <p><em>Skål og god tur!</em></p>
+    </div>
+    
+    <script>
+        // Auto-print when page loads for PDF generation
+        window.onload = function() {
+            setTimeout(function() {
+                window.print();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
